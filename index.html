@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Otoniel Muñoz</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 70px; /* Espacio para navbar fija */
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .section-padding {
+            padding: 80px 0;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        .contact-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+        }
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .carousel-item:hover .project-overlay {
+            opacity: 1;
+        }
+        .btn-custom {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+        }
+        .btn-custom:hover {
+            background: linear-gradient(45deg, #764ba2, #667eea);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación fija -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#inicio">
+                <i class="fas fa-user-circle"></i> Otoniel Muñoz
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre-mi">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proyectos">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="hero-section">
+        <div class="container">
+            <h1 class="display-4 mb-4">¡Hola! Soy Otoniel Muñoz</h1>
+            <p class="lead mb-4">Desarrollador Web Full Stack apasionado por crear experiencias digitales increíbles</p>
+            <a href="#sobre-mi" class="btn btn-light btn-lg">
+                <i class="fas fa-arrow-down"></i> Conoce más sobre mí
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección Sobre mí -->
+    <section id="sobre-mi" class="section-padding bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-center mb-5">Sobre mí</h2>
+                    <div class="card card-hover shadow-lg">
+                        <div class="card-body p-5">
+                            <div class="row align-items-center">
+                                <div class="col-md-4 text-center mb-4 mb-md-0">
+                                    <img src="https://via.placeholder.com/200x200/007bff/ffffff?text=JP" 
+                                         alt="Juan Pérez" class="rounded-circle img-fluid mb-3">
+                                    <h4 class="text-primary">Otoniel Muñoz</h4>
+                                    <p class="text-muted">Desarrollador Web</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <p class="lead mb-4">
+                                        Soy estudiante de Ciencias de la Informatica. Actualmente me encuentro dando clases de programacion.
+                                    </p>
+                                    <p class="mb-4">
+                                        Mi pasión es crear soluciones innovadoras que combinen funcionalidad 
+                                        excepcional con diseños atractivos. Especializado en tecnologías como 
+                                        HTML5, CSS3, JavaScript, Bootstrap y frameworks modernos.
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-sm-6 mb-3">
+                                            <h6 class="font-weight-bold text-primary">
+                                                <i class="fas fa-code"></i> Lenguajes:
+                                            </h6>
+                                            <p class="mb-0">HTML, CSS, JavaScript, Python</p>
+                                        </div>
+                                        <div class="col-sm-6 mb-3">
+                                            <h6 class="font-weight-bold text-primary">
+                                                <i class="fas fa-tools"></i> Herramientas:
+                                            </h6>
+                                            <p class="mb-0">Bootstrap, React, Git, VS Code</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos (Carrusel) -->
+    <section id="proyectos" class="section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5">Proyectos Destacados</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div id="proyectosCarousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#proyectosCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#proyectosCarousel" data-slide-to="1"></li>
+                            <li data-target="#proyectosCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="position-relative">
+                                    <img src="https://via.placeholder.com/800x400/28a745/ffffff?text=E-Commerce+Web+App" 
+                                         class="d-block w-100 rounded" alt="Proyecto 1">
+                                    <div class="project-overlay rounded">
+                                        <div class="text-center">
+                                            <h4>E-Commerce Web App</h4>
+                                            <p>Aplicación web completa para comercio electrónico con carrito de compras y sistema de pagos</p>
+                                            <a href="#" class="btn btn-custom">
+                                                <i class="fas fa-external-link-alt"></i> Ver proyecto
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="position-relative">
+                                    <img src="https://via.placeholder.com/800x400/dc3545/ffffff?text=Dashboard+Admin" 
+                                         class="d-block w-100 rounded" alt="Proyecto 2">
+                                    <div class="project-overlay rounded">
+                                        <div class="text-center">
+                                            <h4>Dashboard Administrativo</h4>
+                                            <p>Panel de control con gráficos interactivos y gestión de usuarios en tiempo real</p>
+                                            <a href="#" class="btn btn-custom">
+                                                <i class="fas fa-external-link-alt"></i> Ver proyecto
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="position-relative">
+                                    <img src="https://via.placeholder.com/800x400/6f42c1/ffffff?text=Portfolio+Website" 
+                                         class="d-block w-100 rounded" alt="Proyecto 3">
+                                    <div class="project-overlay rounded">
+                                        <div class="text-center">
+                                            <h4>Portfolio Personal</h4>
+                                            <p>Sitio web personal responsivo con animaciones CSS y optimización SEO</p>
+                                            <a href="#" class="btn btn-custom">
+                                                <i class="fas fa-external-link-alt"></i> Ver proyecto
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#proyectosCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#proyectosCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contact-section section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5">Contacto</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-5">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4 class="text-primary mb-4">¡Hablemos!</h4>
+                                    <p class="mb-4">
+                                        ¿Tienes un proyecto en mente? Me encantaría escuchar sobre él. 
+                                        Envíame un mensaje y trabajemos juntos.
+                                    </p>
+                                    <div class="mb-3">
+                                        <i class="fas fa-envelope text-primary"></i>
+                                        <strong class="ml-2">juan.perez@email.com</strong>
+                                    </div>
+                                    <div class="mb-3">
+                                        <i class="fas fa-phone text-primary"></i>
+                                        <strong class="ml-2">+52 555 123 4567</strong>
+                                    </div>
+                                    <div class="mb-3">
+                                        <i class="fas fa-map-marker-alt text-primary"></i>
+                                        <strong class="ml-2">Ciudad de México, México</strong>
+                                    </div>
+                                    <div class="mt-4">
+                                        <a href="#" class="btn btn-primary btn-sm mr-2">
+                                            <i class="fab fa-linkedin"></i> LinkedIn
+                                        </a>
+                                        <a href="#" class="btn btn-dark btn-sm mr-2">
+                                            <i class="fab fa-github"></i> GitHub
+                                        </a>
+                                        <a href="#" class="btn btn-info btn-sm">
+                                            <i class="fab fa-twitter"></i> Twitter
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="nombre">Nombre completo</label>
+                                            <input type="text" class="form-control" id="nombre" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Correo electrónico</label>
+                                            <input type="email" class="form-control" id="email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="asunto">Asunto</label>
+                                            <input type="text" class="form-control" id="asunto" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mensaje">Mensaje</label>
+                                            <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-custom btn-block">
+                                            <i class="fas fa-paper-plane"></i> Enviar mensaje
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 Otoniel Muñoz. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <p class="mb-0">Desarrollado con <i class="fas fa-heart text-danger"></i> y Bootstrap</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Smooth scrolling -->
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling para los enlaces del navbar
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 70
+                    }, 1000);
+                }
+            });
+            
+            // Inicializar el carrusel
+            $('#proyectosCarousel').carousel({
+                interval: 4000
+            });
+        });
+    </script>
+</body>
+</html>
